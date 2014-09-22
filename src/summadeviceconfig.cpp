@@ -79,8 +79,8 @@ void summaDeviceConfig::saveDevice()
     providerItem->setData(Qt::UserRole, QVariant::fromValue<driverInstance>(inst));
     
     this->ui->deviceTable->insertRow(this->ui->deviceTable->rowCount());
-    this->ui->deviceTable->setItem(this->ui->deviceTable->rowCount(), 0, providerItem);
-    this->ui->deviceTable->setItem(this->ui->deviceTable->rowCount(), 1, pathItem);
+    this->ui->deviceTable->setItem(this->ui->deviceTable->rowCount()-1, 0, providerItem);
+    this->ui->deviceTable->setItem(this->ui->deviceTable->rowCount()-1, 1, pathItem);
   } else {
     int row = this->ui->deviceTable->currentRow();
     driverInstance inst = this->ui->deviceTable->item(row, 0)->data(Qt::UserRole).value<driverInstance>();

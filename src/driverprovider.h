@@ -20,7 +20,7 @@ class driverProvider : public QObject
   
 public:
   typedef enum {
-    PROTO_DRV_SUMMA
+    PROTO_DRV_SUMMA = 0
   } protocolType;
   
 private:
@@ -65,5 +65,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(driverProvider)
+Q_DECLARE_METATYPE(driverProvider::protocolType)
 
 #endif // DRIVERPROVIDER_H

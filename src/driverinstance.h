@@ -27,7 +27,7 @@ private:
   QString m_path;
 };
   
-Q_DECLARE_METATYPE(QList<driverInstance>)
 Q_DECLARE_METATYPE(driverInstance)
+Q_DECLARE_METATYPE(QList<driverInstance>)
 
 #endif // DRIVERINSTANCE_H
