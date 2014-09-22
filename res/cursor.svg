@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="230.78563"
+   height="312.30054"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="cursor.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3755">
+      <stop
+         style="stop-color:#fff90b;stop-opacity:1;"
+         offset="0"
+         id="stop3757" />
+      <stop
+         style="stop-color:#e5eb00;stop-opacity:0.99145299;"
+         offset="1"
+         id="stop3759" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755"
+       id="radialGradient3761"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755-5"
+       id="radialGradient3761-3"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3755-5">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.17948718;"
+         offset="0"
+         id="stop3757-5" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.38461539;"
+         offset="1"
+         id="stop3759-5" />
+    </linearGradient>
+    <radialGradient
+       r="50.714287"
+       fy="229.50504"
+       fx="254.28572"
+       cy="229.50504"
+       cx="254.28572"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient3778-4"
+       xlink:href="#linearGradient3755-5-8"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient3755-5-8">
+      <stop
+         style="stop-color:#007400;stop-opacity:1;"
+         offset="0"
+         id="stop3757-5-5" />
+      <stop
+         style="stop-color:#005c00;stop-opacity:1;"
+         offset="1"
+         id="stop3759-5-5" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755-1"
+       id="radialGradient3761-4"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3755-1">
+      <stop
+         style="stop-color:#183cff;stop-opacity:1;"
+         offset="0"
+         id="stop3757-57" />
+      <stop
+         style="stop-color:#001aaa;stop-opacity:1;"
+         offset="1"
+         id="stop3759-3" />
+    </linearGradient>
+    <radialGradient
+       r="50.714287"
+       fy="229.50504"
+       fx="254.28572"
+       cy="229.50504"
+       cx="254.28572"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient3850"
+       xlink:href="#linearGradient3755-1"
+       inkscape:collect="always" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755-5"
+       id="radialGradient3869"
+       gradientUnits="userSpaceOnUse"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755-5-8"
+       id="radialGradient3871"
+       gradientUnits="userSpaceOnUse"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755-5"
+       id="radialGradient3904"
+       gradientUnits="userSpaceOnUse"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755-5-8"
+       id="radialGradient3906"
+       gradientUnits="userSpaceOnUse"
+       cx="254.28572"
+       cy="229.50504"
+       fx="254.28572"
+       fy="229.50504"
+       r="50.714287" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="141.40406"
+     inkscape:cy="83.11234"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3930"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="1180"
+     inkscape:window-x="1918"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-133.01006,-181.29075)">
+    <g
+       id="g3873">
+      <g
+         id="g3952">
+        <g
+           id="g3918"
+           transform="matrix(0.34037895,0,0,0.34037895,87.736238,325.58319)"
+           inkscape:export-filename="/home/HAL/projects/summa/res/cursor.png"
+           inkscape:export-xdpi="90.699997"
+           inkscape:export-ydpi="90.699997">
+          <path
+             transform="translate(-5.8828415,0)"
+             d="m 300.00001,229.50504 c 0,25.2473 -20.46699,45.71428 -45.71429,45.71428 -25.2473,0 -45.71429,-20.46698 -45.71429,-45.71428 0,-25.24731 20.46699,-45.71429 45.71429,-45.71429 25.2473,0 45.71429,20.46698 45.71429,45.71429 z"
+             sodipodi:ry="45.714287"
+             sodipodi:rx="45.714287"
+             sodipodi:cy="229.50504"
+             sodipodi:cx="254.28572"
+             id="path2985"
+             style="fill:url(#radialGradient3761);fill-opacity:1;stroke:#fdff52;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+             sodipodi:type="arc" />
+          <text
+             xml:space="preserve"
+             style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+             x="232.71147"
+             y="247.00113"
+             id="text3888"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3890"
+               x="232.71147"
+               y="247.00113">1</tspan></text>
+        </g>
+        <g
+           id="g3937"
+           transform="matrix(0.34037895,0,0,0.34037895,87.736238,325.58319)"
+           inkscape:export-filename="/home/HAL/projects/summa/res/cursor.png"
+           inkscape:export-xdpi="90.699997"
+           inkscape:export-ydpi="90.699997">
+          <path
+             transform="translate(-5.8828415,215.87195)"
+             d="m 300.00001,229.50504 c 0,25.2473 -20.46699,45.71428 -45.71429,45.71428 -25.2473,0 -45.71429,-20.46698 -45.71429,-45.71428 0,-25.24731 20.46699,-45.71429 45.71429,-45.71429 25.2473,0 45.71429,20.46698 45.71429,45.71429 z"
+             sodipodi:ry="45.714287"
+             sodipodi:rx="45.714287"
+             sodipodi:cy="229.50504"
+             sodipodi:cx="254.28572"
+             id="path2985-6"
+             style="fill:url(#radialGradient3850);fill-opacity:1;stroke:#1e33ff;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+             sodipodi:type="arc" />
+          <text
+             xml:space="preserve"
+             style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+             x="233.2271"
+             y="462.84964"
+             id="text3896"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan3898"
+               x="233.2271"
+               y="462.84964">3</tspan></text>
+        </g>
+        <g
+           id="g3942">
+          <g
+             id="g3930">
+            <path
+               transform="matrix(0.34037895,0,0,0.34037895,62.867686,362.32233)"
+               sodipodi:type="arc"
+               style="fill:url(#radialGradient3904);fill-opacity:1;stroke:#c4c4c4;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+               id="path2985-9"
+               sodipodi:cx="254.28572"
+               sodipodi:cy="229.50504"
+               sodipodi:rx="45.714287"
+               sodipodi:ry="45.714287"
+               d="m 300.00001,229.50504 a 45.714287,45.714287 0 1 1 -91.42858,0 45.714287,45.714287 0 1 1 91.42858,0 z"
+               inkscape:export-filename="/home/HAL/projects/summa/res/cursor.png"
+               inkscape:export-xdpi="90.699997"
+               inkscape:export-ydpi="90.699997" />
+            <text
+               sodipodi:linespacing="125%"
+               id="text3892"
+               y="446.504"
+               x="144.44315"
+               style="font-size:16.33819008px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+               xml:space="preserve"
+               inkscape:export-filename="/home/HAL/projects/summa/res/cursor.png"
+               inkscape:export-xdpi="90.699997"
+               inkscape:export-ydpi="90.699997"><tspan
+                 y="446.504"
+                 x="144.44315"
+                 id="tspan3894"
+                 sodipodi:role="line">2</tspan></text>
+          </g>
+          <g
+             id="g3925"
+             transform="matrix(0.34037895,0,0,0.34037895,87.736238,325.58319)"
+             inkscape:export-filename="/home/HAL/projects/summa/res/cursor.png"
+             inkscape:export-xdpi="90.699997"
+             inkscape:export-ydpi="90.699997">
+            <path
+               transform="translate(61.295687,107.93598)"
+               sodipodi:type="arc"
+               style="fill:url(#radialGradient3906);fill-opacity:1;stroke:#007300;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+               id="path2985-9-6"
+               sodipodi:cx="254.28572"
+               sodipodi:cy="229.50504"
+               sodipodi:rx="45.714287"
+               sodipodi:ry="45.714287"
+               d="m 300.00001,229.50504 c 0,25.2473 -20.46699,45.71428 -45.71429,45.71428 -25.2473,0 -45.71429,-20.46698 -45.71429,-45.71428 0,-25.24731 20.46699,-45.71429 45.71429,-45.71429 25.2473,0 45.71429,20.46698 45.71429,45.71429 z" />
+            <text
+               sodipodi:linespacing="125%"
+               id="text3900"
+               y="354.9371"
+               x="300.48767"
+               style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+               xml:space="preserve"><tspan
+                 y="354.9371"
+                 x="300.48767"
+                 id="tspan3902"
+                 sodipodi:role="line">4</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
