@@ -30,3 +30,9 @@ QString driverInstance::path()
 {
   return this->m_path;
 }
+
+driverInstance& driverInstance::operator=(const driverInstance& other)
+{
+  this->m_provider = other.m_provider;
+  this->m_path = other.m_path;
+}

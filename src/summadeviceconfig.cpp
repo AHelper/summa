@@ -2,6 +2,9 @@
 #include "ui_summadeviceconfig.h"
 #include "driverinstance.h"
 #include "drivermanager.h"
+#include <iostream>
+
+using namespace std;
 
 summaDeviceConfig::summaDeviceConfig(QWidget* parent) : QDialog(parent)
 {
@@ -66,6 +69,8 @@ void summaDeviceConfig::saveDevice()
     driverProvider provider = this->ui->deviceTypeCombo->itemData(this->ui->deviceTypeCombo->currentIndex()).value<driverProvider>();
     driverInstance inst(provider, this->ui->devicePathEdit->text());
     
+    cout << "provider: " << provider.name().toStdString() << endl;
+    
     mgr.addInstance(inst);
     
     QTableWidgetItem* providerItem = new QTableWidgetItem(provider.name());
@@ -96,11 +101,12 @@ void summaDeviceConfig::saveDevice()
   this->ui->deviceSaveButton->setEnabled(false);
 }
 
-void summaDeviceConfig::deviceClicked(QTableWidgetItem* item)
+void summaDeviceConfig::deviceClicked(int row, int col)
 {
   this->ui->deviceTypeCombo->setEnabled(true);
   this->ui->devicePathEdit->setEnabled(true);
   this->ui->deviceSaveButton->setEnabled(true);
   
-  this->ui->deviceTypeCombo->findText()
+  this->ui->deviceTypeCombo->setCurrentIndex(this->ui->deviceTypeCombo->findText(this->ui->deviceTable->item(row, 0)->text()));
+  this->ui->devicePathEdit->setText(this->ui->deviceTable->item(row, 1)->text());
 }

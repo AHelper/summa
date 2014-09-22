@@ -2,6 +2,7 @@
 #define DRIVERPROVIDER_H
 
 #include <QtCore/QObject>
+#include <QtCore/QMetaType>
 
 class driverProvider : public QObject
 {
@@ -62,5 +63,7 @@ private:
   QString m_socketPath;
   QString m_name;
 };
+
+Q_DECLARE_METATYPE(driverProvider)
 
 #endif // DRIVERPROVIDER_H

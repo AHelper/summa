@@ -26,7 +26,7 @@ private slots:
   // deleteButton
   void deleteDevice();
   // deviceTable
-  void deviceClicked(QTableWidgetItem* item);
+  void deviceClicked(int row, int col);
   // deviceSaveButton
   void saveDevice();
 };

@@ -17,7 +17,6 @@ target_link_libraries(drv_summa summa)
 
 # qt4_wrap_cpp(MOCS src/summacontrolpanel.h)
 qt4_wrap_ui(UIS src/summacontrolpanel.ui src/summadeviceconfig.ui)
-message(WARNING "${UIS}")
 # add_executable(summactl ${ui_SRCS} ${MOCS} ${UIS})
 add_executable(summactl ${ui_SRCS} ${UIS})
 target_include_directories(summactl PUBLIC ${CMAKE_BINARY_DIR})

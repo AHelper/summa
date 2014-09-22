@@ -25,6 +25,8 @@ QList< driverProvider > driverManager::getProviders()
   {
     providers.push_back(driverProvider(driverProvider::PROTO_DRV_SUMMA, "/var/run/drv_summa.socket", "SummaSketch II"));
   }
+  
+  return providers;
 }
 
 void driverManager::addInstance(driverInstance& inst)

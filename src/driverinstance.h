@@ -2,7 +2,7 @@
 #define DRIVERINSTANCE_H
 
 #include <QtCore/QObject>
-#include <QMetaType>
+#include <QtCore/QMetaType>
 #include "driverprovider.h"
 
 class driverInstance : public QObject
