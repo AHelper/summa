@@ -1,13 +1,16 @@
 #include "driverprovider.h"
 
-driverProvider::driverProvider(driverProvider::protocolType protocol, QString socketPath, QString name): QObject()
+driverProvider::driverProvider(driverProvider::protocolType protocol, QString socketPath, QString name) : QObject()
 {
   this->m_protocol = protocol;
   this->m_socketPath = socketPath;
   this->m_name = name;
 }
 
-driverProvider::driverProvider()
+driverProvider::driverProvider() : QObject(),
+m_protocol(driverProvider::PROTO_DRV_SUMMA),
+m_socketPath(""),
+m_name("")
 {
 }
 
@@ -23,7 +26,7 @@ driverProvider& driverProvider::operator=(const driverProvider& other)
   
   return *this;
 }
-driverProvider::driverProvider(const driverProvider& other): QObject()
+driverProvider::driverProvider(const driverProvider& other) : QObject()
 {
   this->m_name = other.name();
   this->m_protocol = other.m_protocol;
@@ -32,7 +35,7 @@ driverProvider::driverProvider(const driverProvider& other): QObject()
 
 driverProvider::protocolType driverProvider::protocol() const
 {
-  return m_protocol;
+  return (driverProvider::protocolType)this->m_protocol;
 }
 
 QString driverProvider::socketPath() const

@@ -36,3 +36,8 @@ driverInstance& driverInstance::operator=(const driverInstance& other)
   this->m_provider = other.m_provider;
   this->m_path = other.m_path;
 }
+
+driverInstance::operator QVariant()
+{
+  return QVariant::fromValue<driverInstance>(*this);
+}

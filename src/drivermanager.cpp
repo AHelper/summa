@@ -17,8 +17,15 @@ driverManager::~driverManager()
 QList< driverInstance > driverManager::getInstances()
 {
   QSettings settings("AHelper", "summactl");
-
-  return settings.value("instances").value<QList<driverInstance> >();
+  QList<QVariant> variants = settings.value("instances").value<QList<QVariant> >();
+  QList<driverInstance> instances;
+  
+  for(auto variant : variants)
+  {
+    instances.append(variant.value<driverInstance>());
+  }
+  
+  return instances;
 }
 
 QList< driverProvider > driverManager::getProviders()
@@ -35,17 +42,32 @@ QList< driverProvider > driverManager::getProviders()
 
 void driverManager::addInstance(driverInstance& inst)
 {
-  QSettings settings("AHelper", "summactl");
   
   QList<driverInstance> instances = getInstances();
   
   instances.push_back(inst);
-  cout << instances.size() << endl;
   
-  settings.setValue("instances", QVariant::fromValue<QList<driverInstance> >(instances));
-  instances = getInstances();
-  cout << instances[0].path().toStdString() << " " << instances[0].provider().name().toStdString() << endl;
-  cout << QVariant::fromValue<QList<driverInstance>>(instances).userType() << endl;
+  QList<QVariant> pack;
+  
+  for(auto instance : instances)
+  {
+  qRegisterMetaType<driverProvider>("driverProvider");
+    QVariant v;
+    v.setValue(instance.provider().protocol());
+    cout << "Valid: " << (int)v.isValid() << endl;
+    pack.append(v);
+  }
+   {
+  QSettings settings("AHelper", "summactl");
+  settings.setValue("instances", QVariant::fromValue<driverProvider>(instances[0].provider()));}
+  pack.clear();
+   {
+  QSettings settings("AHelper", "summactl");
+  settings.setValue("instances", QVariant(pack));}
+  cout << "Type name: " << QMetaType::typeName(280) << endl;
+//   instances = getInstances();
+//   cout << instances[0].path().toStdString() << " " << instances[0].provider().name().toStdString() << endl;
+//   cout << QVariant::fromValue<QList<driverInstance>>(instances).userType() << endl;
 }
 
 void driverManager::removeInstance(driverInstance& inst)
