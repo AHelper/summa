@@ -116,3 +116,16 @@ bool driverProvider::hasSmartButtons()
   return false;
 }
 
+QDataStream& operator<<(QDataStream& stream, const driverProvider& p)
+{
+  stream << (qint32)p.m_protocol << p.m_name << p.m_socketPath;
+  
+  return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, driverProvider& p)
+{
+  stream >> (qint32&)p.m_protocol >> p.m_name >> p.m_socketPath;
+  
+  return stream;
+}

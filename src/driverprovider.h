@@ -17,6 +17,8 @@ class driverProvider : public QObject
 
   friend class driverManager;
   friend class driverInstance;
+  friend QDataStream& operator<<(QDataStream& stream, const driverProvider& p);
+  friend QDataStream& operator>>(QDataStream& stream, driverProvider& p);
   
 public:
   typedef enum {

@@ -5,7 +5,9 @@
 int main(int argc, char** argv)
 {
   QApplication app(argc, argv);
-  qRegisterMetaType<driverProvider>();
+  qRegisterMetaTypeStreamOperators<driverProvider>("driverProvider");
+  qRegisterMetaTypeStreamOperators<driverInstance>("driverInstance");
+  qRegisterMetaTypeStreamOperators<QList<driverInstance> >("QList<driverInstance>");
   summaControlPanel window;
   
   window.show();

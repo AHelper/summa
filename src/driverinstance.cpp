@@ -41,3 +41,45 @@ driverInstance::operator QVariant()
 {
   return QVariant::fromValue<driverInstance>(*this);
 }
+
+QDataStream& operator<<(QDataStream& stream, const driverInstance& other)
+{
+  stream << other.m_provider << other.m_path;
+  
+  return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, driverInstance& other)
+{
+  stream >> other.m_provider >> other.m_path;
+  
+  return stream;
+}
+
+QDataStream& operator<<(QDataStream& stream, const QList<driverInstance>& other)
+{
+  stream << other.size();
+  
+  for(driverInstance inst : other)
+    stream << inst;
+  
+  return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, QList<driverInstance>& other)
+{
+  int size;
+  
+  stream >> size;
+  
+  while(size--)
+  {
+    driverInstance inst;
+    
+    stream >> inst;
+    
+    other.push_back(inst);
+  }
+  
+  return stream;
+}

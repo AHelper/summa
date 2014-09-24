@@ -51,7 +51,6 @@ void driverManager::addInstance(driverInstance& inst)
   
   for(auto instance : instances)
   {
-  qRegisterMetaType<driverProvider>("driverProvider");
     QVariant v;
     v.setValue(instance.provider().protocol());
     cout << "Valid: " << (int)v.isValid() << endl;
@@ -59,12 +58,12 @@ void driverManager::addInstance(driverInstance& inst)
   }
    {
   QSettings settings("AHelper", "summactl");
-  settings.setValue("instances", QVariant::fromValue<driverProvider>(instances[0].provider()));}
-  pack.clear();
-   {
-  QSettings settings("AHelper", "summactl");
-  settings.setValue("instances", QVariant(pack));}
-  cout << "Type name: " << QMetaType::typeName(280) << endl;
+  settings.setValue("instances", QVariant::fromValue<QList<driverInstance> >(instances));}
+//   pack.clear();
+//    {
+//   QSettings settings("AHelper", "summactl");
+//   settings.setValue("instances", QVariant(pack));}
+  cout << "Type name: " << QMetaType::typeName(284) << endl;
 //   instances = getInstances();
 //   cout << instances[0].path().toStdString() << " " << instances[0].provider().name().toStdString() << endl;
 //   cout << QVariant::fromValue<QList<driverInstance>>(instances).userType() << endl;

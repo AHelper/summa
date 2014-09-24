@@ -12,6 +12,9 @@ class driverInstance : public QObject
 //   Q_PROPERTY(driverProvider provider READ provider)
   Q_PROPERTY(QString path READ path);
   
+  friend QDataStream& operator<<(QDataStream& stream, const driverInstance& other);
+  friend QDataStream& operator>>(QDataStream& stream, driverInstance& other);
+  
 public:
   driverInstance();
   driverInstance(const driverInstance& other);
