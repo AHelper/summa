@@ -34,6 +34,7 @@ public:
   ~driverProvider();
   
   driverProvider& operator=(const driverProvider& other);
+  bool operator==(const driverProvider& other);
 
   protocolType protocol() const;
   QString socketPath() const;

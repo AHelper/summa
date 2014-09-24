@@ -22,6 +22,7 @@ public:
   ~driverInstance();
   
   driverInstance& operator=(const driverInstance& other);
+  bool operator==(const driverInstance& other);
   operator QVariant();
   
   driverProvider provider();

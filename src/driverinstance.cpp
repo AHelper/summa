@@ -83,3 +83,8 @@ QDataStream& operator>>(QDataStream& stream, QList<driverInstance>& other)
   
   return stream;
 }
+
+bool driverInstance::operator==(const driverInstance& other)
+{
+  return this->m_path == other.m_path && this->m_provider == other.m_provider;
+}

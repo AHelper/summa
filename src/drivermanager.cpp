@@ -17,15 +17,7 @@ driverManager::~driverManager()
 QList< driverInstance > driverManager::getInstances()
 {
   QSettings settings("AHelper", "summactl");
-  QList<QVariant> variants = settings.value("instances").value<QList<QVariant> >();
-  QList<driverInstance> instances;
-  
-  for(auto variant : variants)
-  {
-    instances.append(variant.value<driverInstance>());
-  }
-  
-  return instances;
+  return settings.value("instances").value<QList<driverInstance> >();
 }
 
 QList< driverProvider > driverManager::getProviders()
@@ -42,28 +34,20 @@ QList< driverProvider > driverManager::getProviders()
 
 void driverManager::addInstance(driverInstance& inst)
 {
-  
+
   QList<driverInstance> instances = getInstances();
-  
+
   instances.push_back(inst);
-  
-  QList<QVariant> pack;
-  
-  for(auto instance : instances)
+
   {
-    QVariant v;
-    v.setValue(instance.provider().protocol());
-    cout << "Valid: " << (int)v.isValid() << endl;
-    pack.append(v);
+    QSettings settings("AHelper", "summactl");
+    settings.setValue("instances", QVariant::fromValue<QList<driverInstance> >(instances));
   }
-   {
-  QSettings settings("AHelper", "summactl");
-  settings.setValue("instances", QVariant::fromValue<QList<driverInstance> >(instances));}
 //   pack.clear();
 //    {
 //   QSettings settings("AHelper", "summactl");
 //   settings.setValue("instances", QVariant(pack));}
-  cout << "Type name: " << QMetaType::typeName(284) << endl;
+//   cout << "Type name: " << QMetaType::typeName(284) << endl;
 //   instances = getInstances();
 //   cout << instances[0].path().toStdString() << " " << instances[0].provider().name().toStdString() << endl;
 //   cout << QVariant::fromValue<QList<driverInstance>>(instances).userType() << endl;
@@ -71,5 +55,19 @@ void driverManager::addInstance(driverInstance& inst)
 
 void driverManager::removeInstance(driverInstance& inst)
 {
-
+  QList<driverInstance> instances = getInstances();
+  
+  for(int i = 0; i < instances.size(); i++)
+  {
+    if(instances[i] == inst)
+    {
+      instances.removeAt(i);
+      i--;
+    }
+  }
+  
+  {
+    QSettings settings("AHelper", "summactl");
+    settings.setValue("instances", QVariant::fromValue<QList<driverInstance> >(instances));
+  }
 }

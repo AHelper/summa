@@ -27,9 +27,10 @@ summaDeviceConfig::summaDeviceConfig(QWidget* parent) : QDialog(parent)
     QTableWidgetItem* providerItem = new QTableWidgetItem(instance.provider().name());
     QTableWidgetItem* pathItem = new QTableWidgetItem(instance.path());
     
-    this->ui->deviceTable->insertRow(this->ui->deviceTable->rowCount());
-    this->ui->deviceTable->setItem(this->ui->deviceTable->rowCount(), 0, providerItem);
-    this->ui->deviceTable->setItem(this->ui->deviceTable->rowCount(), 1, pathItem);
+    int row = this->ui->deviceTable->rowCount();
+    this->ui->deviceTable->insertRow(row);
+    this->ui->deviceTable->setItem(row, 0, providerItem);
+    this->ui->deviceTable->setItem(row, 1, pathItem);
   }
 }
 
@@ -58,6 +59,8 @@ void summaDeviceConfig::deleteDevice()
     driverInstance inst = this->ui->deviceTable->selectedItems()[0]->data(Qt::UserRole).value<driverInstance>();
     
     mgr.removeInstance(inst);
+    
+    this->ui->deviceTable->removeRow(this->ui->deviceTable->currentRow());
   }
 }
 
