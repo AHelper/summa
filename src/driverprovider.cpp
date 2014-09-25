@@ -129,3 +129,8 @@ QDataStream& operator>>(QDataStream& stream, driverProvider& p)
   
   return stream;
 }
+
+bool driverProvider::operator==(const driverProvider& other)
+{
+  return this->m_name == other.m_name && this->m_protocol == other.m_protocol && this->m_socketPath == other.m_socketPath;
+}
