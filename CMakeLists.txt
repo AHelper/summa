@@ -12,7 +12,7 @@ set(ui_SRCS src/summacontrolpanel.cpp src/summadeviceconfig.cpp src/main.cpp src
 
 
 add_custom_command(OUTPUT comm_summa.pb-c.h comm_summa.pb-c.c COMMAND protoc-c ARGS --c_out=${CMAKE_BINARY_DIR} --proto_path=${CMAKE_SOURCE_DIR}/src/ ${CMAKE_SOURCE_DIR}/src/comm_summa.proto MAIN_DEPENDENCY src/comm_summa.proto)
-add_library(summa src/drv_summa.c ${PROTO_SRCS} comm_summa.pb-c.c)
+add_library(summa src/drv_summa.c ${PROTO_SRCS} comm_summa.pb-c.c src/comm_summa.c)
 
 add_executable(drv_summa src/summa.c)
 target_link_libraries(drv_summa summa protobuf-c)

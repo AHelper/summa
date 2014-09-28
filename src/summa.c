@@ -4,6 +4,7 @@
 #include <string.h>
 #include <signal.h>
 #include "drv_summa.h"
+#include "comm_summa.h"
 
 int running = 1;
 
@@ -43,12 +44,12 @@ int main(int argc, char** argv) {
     }
   }
   
-  if(dev_path == 0) {
-    fprintf(stderr, "Device path required, exiting.\n");
-    return 1;
-  }
-  
   if(daemonize == 0) {
+    if(dev_path == 0) {
+      fprintf(stderr, "Device path required, exiting.\n");
+      return 1;
+    }
+  
     signal(SIGINT, catch_exit);
     
     struct drv_summa_device dev;
@@ -82,5 +83,14 @@ int main(int argc, char** argv) {
     
     printf("\n");
     drv_summa_close(&dev);
+  } else {
+    int sock = comm_summa_open("/var/run/drv_summa.socket");
+    
+    if(sock < 0) {
+      fprintf(stderr, "Failed to open socket\n");
+      return;
+    }
+    
+    comm_summa_close(sock);
   }
 }
