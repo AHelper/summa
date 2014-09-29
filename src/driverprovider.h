@@ -3,6 +3,7 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QMetaType>
+#include <QtNetwork/QLocalSocket>
 
 class driverProvider : public QObject
 {
@@ -62,9 +63,12 @@ public:
   bool hasSmartButtons();
 
 private:
+  void connectSocket();
+  
   protocolType m_protocol;
   QString m_socketPath;
   QString m_name;
+  QLocalSocket m_socket;
 };
 
 Q_DECLARE_METATYPE(driverProvider)

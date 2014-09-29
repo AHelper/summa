@@ -4,7 +4,7 @@
 #include <string.h>
 #include <signal.h>
 #include "drv_summa.h"
-#include "comm_summa.h"
+#include "summa_child.h"
 
 int running = 1;
 
@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
     
     printf("\n");
     drv_summa_close(&dev);
-  } else {
+  } else {/*
     int sock = comm_summa_open("/var/run/drv_summa.socket");
     
     if(sock < 0) {
@@ -91,6 +91,7 @@ int main(int argc, char** argv) {
       return;
     }
     
-    comm_summa_close(sock);
+    comm_summa_close(sock);*/
+    summa_child_spawn("/var/run/drv_summa.socket");
   }
 }

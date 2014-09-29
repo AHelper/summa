@@ -4,26 +4,7 @@
 #include <time.h>
 #include <stdint.h>
 #include <linux/uinput.h>
-
-#define RET_VAL_OK        0x00
-#define RET_VAL_DEVERR    0x01
-#define RET_VAL_IOERR     0x02
-#define RET_VAL_UINPUTERR 0x03
-#define RET_VAL_TTYERR    0x04
-#define RET_VAL_TIMEOUT   0x05
-#define RET_VAL_STATE     0x06
-
-typedef uint16_t RET_CODE;
-
-#define RET_STR_OK        ""
-#define RET_STR_DEVERR    "Device failed to be accessed"
-#define RET_STR_IOERR     "Device communication failure"
-#define RET_STR_UINPUTERR "uinput failed to be accessed"
-#define RET_STR_TTYERR    "TTY device failed to initialize"
-#define RET_STR_TIMEOUT   "Device communication timeout"
-#define RET_STR_STATE     "Invalid device driver state"
-
-#define RET(x) {if(RET_VAL_OK != RET_VAL_##x) errstr = RET_STR_##x; return RET_VAL_##x;}
+#include "ret_code.h"
 
 #define STATE_DISCONNECTED 0x00
 #define STATE_CONNECTED    0x01
@@ -116,8 +97,6 @@ struct drv_summa_device {
 };
 
 typedef void (*drv_summa_listener)(struct drv_summa_device* dev, struct drv_summa_command_callback* command);
-
-extern const char* errstr;
 
 const struct drv_summa_resolution* drv_summa_get_resolutions();
 RET_CODE drv_summa_set_resolution(const struct drv_summa_resolution* res, struct drv_summa_device* dev);

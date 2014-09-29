@@ -1,16 +1,17 @@
 #include "driverprovider.h"
+#include <iostream>
 
-driverProvider::driverProvider(driverProvider::protocolType protocol, QString socketPath, QString name) : QObject()
+driverProvider::driverProvider(driverProvider::protocolType protocol, QString socketPath, QString name) : QObject(),
+  m_protocol(protocol),
+  m_socketPath(socketPath),
+  m_name(name)
 {
-  this->m_protocol = protocol;
-  this->m_socketPath = socketPath;
-  this->m_name = name;
 }
 
 driverProvider::driverProvider() : QObject(),
-m_protocol(driverProvider::PROTO_DRV_SUMMA),
-m_socketPath(""),
-m_name("")
+  m_protocol(driverProvider::PROTO_DRV_SUMMA),
+  m_socketPath(""),
+  m_name("")
 {
 }
 
@@ -23,7 +24,7 @@ driverProvider& driverProvider::operator=(const driverProvider& other)
   this->m_name = other.name();
   this->m_protocol = other.m_protocol;
   this->m_socketPath = other.m_socketPath;
-  
+
   return *this;
 }
 driverProvider::driverProvider(const driverProvider& other) : QObject()
@@ -47,12 +48,12 @@ QString driverProvider::socketPath() const
 // {
 //   m_protocol = protocol;
 // }
-// 
+//
 // void driverProvider::setSocketPath(const QString& socketPath)
 // {
 //   m_socketPath = socketPath;
 // }
-// 
+//
 // void driverProvider::setName(const QString& name)
 // {
 //   m_name = name;
@@ -116,17 +117,22 @@ bool driverProvider::hasSmartButtons()
   return false;
 }
 
+void driverProvider::connectSocket()
+{
+  this->m_socket.connectToServer("/var/run/drv_summa.socket");
+}
+
 QDataStream& operator<<(QDataStream& stream, const driverProvider& p)
 {
   stream << (qint32)p.m_protocol << p.m_name << p.m_socketPath;
-  
+
   return stream;
 }
 
 QDataStream& operator>>(QDataStream& stream, driverProvider& p)
 {
   stream >> (qint32&)p.m_protocol >> p.m_name >> p.m_socketPath;
-  
+
   return stream;
 }
 
