@@ -33,6 +33,6 @@ qt4_wrap_ui(UIS src/summacontrolpanel.ui src/summadeviceconfig.ui)
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS src/comm_summa.proto)
 add_executable(summactl ${ui_SRCS} ${UIS} ${PROTO_SRCS})
 target_include_directories(summactl PUBLIC ${CMAKE_BINARY_DIR})
-target_link_libraries(summactl summa Qt4::QtGui protobuf)
+target_link_libraries(summactl summa Qt4::QtGui Qt4::QtNetwork protobuf)
 
 add_subdirectory(src)
