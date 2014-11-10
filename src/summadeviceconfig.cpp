@@ -27,6 +27,8 @@ summaDeviceConfig::summaDeviceConfig(QWidget* parent) : QDialog(parent)
     QTableWidgetItem* providerItem = new QTableWidgetItem(instance.provider().name());
     QTableWidgetItem* pathItem = new QTableWidgetItem(instance.path());
     
+    providerItem->setData(Qt::UserRole, QVariant::fromValue<driverInstance>(instance));
+    
     int row = this->ui->deviceTable->rowCount();
     this->ui->deviceTable->insertRow(row);
     this->ui->deviceTable->setItem(row, 0, providerItem);
@@ -112,4 +114,14 @@ void summaDeviceConfig::deviceClicked(int row, int col)
   
   this->ui->deviceTypeCombo->setCurrentIndex(this->ui->deviceTypeCombo->findText(this->ui->deviceTable->item(row, 0)->text()));
   this->ui->devicePathEdit->setText(this->ui->deviceTable->item(row, 1)->text());
+}
+
+driverInstance summaDeviceConfig::getInstance()
+{
+  if(!this->ui->deviceTable->selectedItems().isEmpty())
+  {
+    return this->ui->deviceTable->selectedItems()[0]->data(Qt::UserRole).value<driverInstance>();
+  } else {
+    cout << "Oh dear\n";
+  }
 }

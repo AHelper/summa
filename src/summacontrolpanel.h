@@ -35,6 +35,8 @@ public:
 private:
   Ui::summaControlPanel* ui;
   
+  void setupDeviceList();
+  
 public slots:
   // deviceCombo
   void deviceChanged(int dev);

@@ -8,7 +8,7 @@ RET_CODE comm_summa_open(const char* path, int *sock);
 RET_CODE comm_summa_close(int fd);
 RET_CODE comm_summa_accept(int fd, int *client);
 RET_CODE comm_summa_read_request(int fd, CommSummaRequest** request);
-RET_CODE comm_summa_send_query(int fd, const CommSummaQuery** query);
-RET_CODE comm_summa_send_set(int fd, const CommSummaSet** set);
+RET_CODE comm_summa_send_response(int fd, const CommSummaResponse* query);
+// RET_CODE comm_summa_send_set(int fd, const CommSummaSet** set);
 
 #endif // COMM_SUMMA

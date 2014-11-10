@@ -63,6 +63,7 @@ void driverManager::removeInstance(driverInstance& inst)
     {
       instances.removeAt(i);
       i--;
+      qDebug() << "Removed";
     }
   }
   

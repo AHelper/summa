@@ -30,16 +30,7 @@ summaControlPanel::summaControlPanel(QWidget* parent, Qt::WindowFlags f) : QWidg
   ui = new Ui::summaControlPanel;
   ui->setupUi(this);
   
-  driverManager mgr;
-  auto instances = mgr.getInstances();
-  
-  // Populate the drivers list
-  for(auto instance : instances)
-  {
-    ui->deviceCombo->addItem(instance.provider().name() + " @ " + instance.path(), QVariant::fromValue<driverInstance>(instance));
-  }
-  
-  ui->deviceCombo->setCurrentIndex(0);
+  setupDeviceList();
 }
 
 summaControlPanel::~summaControlPanel()
@@ -50,6 +41,12 @@ summaControlPanel::~summaControlPanel()
 void summaControlPanel::deviceChanged(int dev)
 {
   cout << "TODO: deviceChanged(" << dev << ")\n";
+  
+  driverInstance inst = ui->deviceCombo->itemData(ui->deviceCombo->currentIndex()).value<driverInstance>();
+  
+  driverProvider prov = inst.provider();
+  
+  qDebug() << "DPI" << prov.dpi();
 }
 
 void summaControlPanel::deviceConfig()
@@ -61,6 +58,26 @@ void summaControlPanel::deviceConfig()
 
   if(cfg.exec() == QDialog::Accepted)
   {
+    setupDeviceList();
     
+    ui->deviceCombo->setCurrentIndex(ui->deviceCombo->findData(QVariant::fromValue<driverInstance>(cfg.getInstance())));
   }
 }
+
+void summaControlPanel::setupDeviceList()
+{
+  driverManager mgr;
+  auto instances = mgr.getInstances();
+ 
+  // Clear existing items
+  ui->deviceCombo->clear();
+  
+  // Populate the drivers list
+  for(auto instance : instances)
+  {
+    ui->deviceCombo->addItem(instance.provider().name() + " @ " + instance.path(), QVariant::fromValue<driverInstance>(instance));
+  }
+  
+  ui->deviceCombo->setCurrentIndex(0);
+}
+

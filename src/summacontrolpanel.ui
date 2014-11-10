@@ -713,6 +713,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>deviceCombo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>summaControlPanel</receiver>
+   <slot>deviceChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>deviceChanged(int)</slot>

@@ -17,9 +17,16 @@ message comm_summa_query {
   required bool has_smart_buttons = 3;
   required bool has_anti_jitter = 4;
   repeated int32 dpi = 5;
+  required comm_summa_set set = 6;
 }
 
 message comm_summa_request {
   optional comm_summa_set set = 1;
   optional bool query = 2 [default = false];
+  optional string device = 3;
+}
+
+message comm_summa_response {
+  optional comm_summa_query query = 1;
+  optional bool device_ok = 2;
 }

@@ -43,7 +43,8 @@ int main(int argc, char** argv) {
         return 1;
     }
   }
-  
+  summa_child_spawn("/var/run/drv_summa.socket");
+  return 0;
   if(daemonize == 0) {
     if(dev_path == 0) {
       fprintf(stderr, "Device path required, exiting.\n");

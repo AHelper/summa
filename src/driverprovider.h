@@ -5,6 +5,8 @@
 #include <QtCore/QMetaType>
 #include <QtNetwork/QLocalSocket>
 
+class comm_summa_request;
+class comm_summa_response;
 class driverProvider : public QObject
 {
   Q_OBJECT
@@ -61,14 +63,17 @@ public:
   bool smartButtons();
   void setSmartButtons(bool smartButtons);
   bool hasSmartButtons();
+  
+  bool connectSocket();
 
 private:
-  void connectSocket();
   
   protocolType m_protocol;
   QString m_socketPath;
   QString m_name;
   QLocalSocket m_socket;
+  
+  comm_summa_response* getResponse(comm_summa_request *req);
 };
 
 Q_DECLARE_METATYPE(driverProvider)

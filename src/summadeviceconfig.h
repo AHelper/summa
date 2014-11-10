@@ -2,7 +2,7 @@
 #define SUMMADEVICECONFIG_H
 
 #include <Qt/QtGui>
-
+#include "driverinstance.h"
 
 namespace Ui
 {
@@ -15,6 +15,8 @@ class summaDeviceConfig : public QDialog
 public:
   summaDeviceConfig(QWidget *parent);
   ~summaDeviceConfig();
+  
+  driverInstance getInstance();
 
 private:
   Ui::summaDeviceConfig* ui;
